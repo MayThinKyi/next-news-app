@@ -6,16 +6,18 @@ export default async function Home() {
   const data=await res.json();
   const newsData=data?.articles;
   return (
-   <div className='py-10  px-5 sm:px-10 lg:px-20'>
-     <head>
-        <title>Breaking News</title>
-      </head>
+   <main className='px-5 py-10 sm:px-10 lg:px-20'>
+    
       <h1 className='mb-6 text-3xl font-bold text-black'>Breaking News</h1>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+ <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3'>
         {newsData?.map((item)=>{
           return <NewsItem key={item?.title} article={item} />
         })}
       </div>
-   </div>
+     
+   </main>
   )
 }
+/*
+      
+*/
